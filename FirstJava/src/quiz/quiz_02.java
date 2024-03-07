@@ -8,6 +8,7 @@ public class quiz_02 {
 		double a = 37;
 		double b = 11;
 		double result = a / b;
+		//double result = (int)((a/b)*100)/100.0;
 		System.out.printf("한 역에 걸리는 시간 : " + String.format("%.2f", result));
 	}
 
