@@ -16,7 +16,7 @@ public class quiz_240312_PM3 {
 			// 랜덤값 생성
 			int rand = (int)(Math.random() * 45) + 1;
 			int i = 0; // index와 값을 비교하기 위해서.
-			for(i = 0; i < index; i++) {
+			for(i = 0; i < index; i++) { 
 				if(rand == lotto[i]) { // 추첨된 번호가 중복됨.
 					break;
 				}
@@ -29,7 +29,7 @@ public class quiz_240312_PM3 {
 						
 						for(i = 0; i < lotto.length; i++) {
 							System.out.print(lotto[i] + "\t");
-						}
+						} 
 		}
 	
 	}

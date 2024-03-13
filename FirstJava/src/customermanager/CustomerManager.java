@@ -1,29 +1,27 @@
+package customermanager;
+
 import java.util.Scanner;
 
-public class C00_CustomerManager {
-
-	// 고객 정보를 저장할 수 있는 배열 지정.
-
-	static final int MAX = 100; // final 한번 입력된 값은 변경X
-
-	// 고객 정보를 저장할 변수를 배열로 선언 : 이름, 성별, 이메일, 출생년도.
-	static String[] nameList = new String[MAX]; // 이름 저장
-	static String[] genderList = new String[MAX]; // 성별 저장
-	static String[] emailList = new String[MAX]; // 이메일 저장
-	static int[] birthYearList = new int[MAX]; // 출생년도 저장.
-
-	// 배열을 참조하기 위해서 인덱스가 필요함.
-	static int index = -1; // 배열의 인덱스 시작은 0부터, 때문에 최소 인덱스는 -1이되어야 함.
-
-	// 배열의 처음 선언한 크기보다 같거나 작은 개수의 자료를 저장
-	// 때문에 현재 데이터가 몇개 저장되어 있는지 알 수 있는 변수가 필요.
-	static int count = 0; // 저장 개수
-
-	// 기본 입력장치로부터 데이터를 입력 받기 위해서 Scanner 객체 생성
-	static Scanner scan = new Scanner(System.in);
-
+public class CustomerManager {
 	public static void main(String[] args) {
-		// 고객 관리 프로그램 메뉴
+		Customer customer = new Customer();
+
+		customer.run();
+	}
+}
+
+class Customer {
+	final int MAX = 100;
+	String[] nameList = new String[MAX];
+	String[] genderList = new String[MAX];
+	String[] emailList = new String[MAX];
+	int[] birthYearList = new int[MAX];
+	int index = -1;
+	int count = 0;
+
+	Scanner scan = new Scanner(System.in);
+
+	void run() {
 		while (true) {
 			// 고객 메뉴 ui(TEXT UI)
 			System.out.printf("\n[INFO] 고객 수 : %d, 인덱스 : %d\n", count, index);
@@ -91,10 +89,9 @@ public class C00_CustomerManager {
 				System.out.println("메뉴를 잘 못 입력했습니다. 다시 선택해 주세요");
 			}
 		}
-
 	}
 
-	public static void inssertCustomerData() { // insert
+	void inssertCustomerData() { // insert
 		// 이름, 성별, 이메일, 출생년도 입력
 		System.out.print("이름 : ");
 		String name = scan.next();
@@ -114,7 +111,7 @@ public class C00_CustomerManager {
 
 	}
 
-	public static void printCustomerData(int index) { // previous
+	void printCustomerData(int index) { // previous
 		System.out.println("==========CUSTOMER INFO============");
 		System.out.println("이름 : " + nameList[index]);
 		System.out.println("성별 : " + genderList[index]);
@@ -123,7 +120,7 @@ public class C00_CustomerManager {
 		System.out.println("===================================");
 	}
 
-	public static void updateCustomerData(int index) { // update
+	void updateCustomerData(int index) { // update
 		System.out.println("---------------UPDATE CUSTOMER INFO---------------");
 		System.out.print("이름" + "(" + nameList[index] + ") :");
 		String name = scan.nextLine();
@@ -139,7 +136,7 @@ public class C00_CustomerManager {
 
 	}
 
-	public static void deleteCustomerData(int index) { // delete
+	void deleteCustomerData(int index) { // delete
 		for (int i = index; i < count - 1; i++) {
 			nameList[i] = nameList[i + 1];
 			genderList[i] = genderList[i + 1];
