@@ -6,6 +6,13 @@ public class Teacher extends Person {
 
 	public String teacherId;
 	public String subject;
+	
+	public Teacher() {}
+	
+	public Teacher(String name, int age, String subject) {
+		super(name, age); // 부모클래스의 name, age 가져오기
+		this.subject = subject;
+	}
 
 	@Override
 	public String getDetails() {

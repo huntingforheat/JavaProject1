@@ -18,7 +18,7 @@ public class ObjectExample {
 		System.out.println("p1과 p2의 비교 결과 : " +(p1.hashCode() == p2.hashCode())); // hascode는 서로 같은값인지 비교할떄 사용.
 		
 		Person o1 = new Person("홍길동", 20);
-		Person oto1 = o1;
+		Person oto1 = o1; // 얕은 복사
 		Person o2 = new Person("홍길동", 20);
 		System.out.println("o1의 해쉬값 : " + o1.hashCode());
 		System.out.println("o2의 해쉬값 : " + o2.hashCode());
@@ -40,7 +40,7 @@ public class ObjectExample {
 		
 		System.out.println("p3 객체의 getClass()의 결과 : "  + p3.getClass().toString());
 		System.out.println("p3와 p2값의 equals()의 결과 : " + p3.equals(p2));
-		System.out.println(toString);
+		//System.out.println(toString);
 	}
 
 }

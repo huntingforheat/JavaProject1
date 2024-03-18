@@ -4,27 +4,27 @@ class Airplane {
 	
 	String name;
 	
-	public String takeOff;
-	public String fly;
-	public String land;
-	public int flyMode;
+	private boolean takeOff;
+	private boolean fly;
+	private boolean land;
+	private int flyMode;
 	
-	public Airplane(String takeOff, String fly, String land, int flyMode) {
+	public Airplane(boolean takeOff, boolean fly, boolean land, int flyMode) {
 		this.takeOff = takeOff;
 		this.fly = fly;
 		this.land = land;
 		this.flyMode = flyMode;
 	}
 
-	public String getTakeOff() {
+	public boolean getTakeOff() {
 		return takeOff;
 	}
 	
-	public String getFly() {
+	public boolean getFly() {
 		return fly;
 	}
 	
-	public String getLand() {
+	public boolean getLand() {
 		return land;
 	}
 	
@@ -32,20 +32,43 @@ class Airplane {
 		return flyMode;
 	}
 	
-	public void setTakeOff(String takeOff) {
+	public void setTakeOff(boolean takeOff) {
+		if((takeOff == true)) {
+			System.out.println("이륙합니다.");
+			this.takeOff = true;
+		} else {
+			System.out.println("이륙 직전입니다.");
 		this.takeOff = takeOff;
+		}
 	}
 
-	public void setFly(String fly) {
-		this.fly = fly;
+	public void setFly(boolean fly) {
+		if((fly == true)) {
+			System.out.println("비행중입니다.");
+			this.fly = true;
+		} else {
+			System.out.println("비행중이 아닙니다.");
+			this.fly = fly;
+		}
 	}
 
-	public void setLand(String land) {
-		this.land = land;
+	public void setLand(boolean land) {
+		if((land == true)) {
+			System.out.println("착륙중입니다.");
+			this.land  = true;
+		} else {
+			System.out.println("착륙중이 아닙니다.");
+			this.land = land;
+		}
 	}
 
 	public void setFlyMode(int flyMode) {
+		if((flyMode == 1)) {
+			System.out.println("고속모드로 비행합니다.");
+		} else {
+			
 		this.flyMode = flyMode;
+		}
 	}
 	
 	public String getDetails() {
@@ -94,7 +117,8 @@ class SuperSonicAp extends Airplane {
 public class Quiz_240314_PM {
 	
 	public static void main(String[] args) {
-		SuperSonicAp myFlyMode = new SuperSonicAp();
+		Airplane a = new Airplane("출발", "예", "예");
+		System.out.println(a.getDetails());
 		
 	}
 }

@@ -6,6 +6,13 @@ public class Employee extends Person {
 
 	public String companyId;
 	public String department;
+	
+	public Employee() {}
+	
+	public Employee(String name, int age, String department) {
+		super(name, age);
+		this.department = department;
+	}
 
 	@Override
 	public String getDetails() {
