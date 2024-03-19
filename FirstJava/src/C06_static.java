@@ -23,7 +23,8 @@ import obj.Count;
  *     static 변수와 관련된 작업을 하거나 어떤 인스턴스 변수도 사용하지 않고, 매개변수로만 작업을 처리하는 메서드는 static 메서드로 정의해 줍니다.
  *     ex) Math 클래스의 메서드들.
  *     
- *    
+ *    static이 붙은 멤버 변수 - 클래스 변수
+ *    static이 붙지 않은 변수 - 인스턴스 변수
  */
 
 public class C06_static {

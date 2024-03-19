@@ -78,6 +78,11 @@ public class Customer {
 		
 		return true;
 		}
+	
+protected class CustomerName {
+	Customer customer = new Customer();
+	
+}
 
 	
 }

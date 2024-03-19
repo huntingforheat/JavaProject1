@@ -43,7 +43,7 @@ class Machine {
 		remocon.off();
 	}
 	
-	
+
 }
 
 class TV1 extends Machine {
