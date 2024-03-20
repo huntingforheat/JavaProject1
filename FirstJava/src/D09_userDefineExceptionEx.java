@@ -16,7 +16,7 @@ public class D09_userDefineExceptionEx {
 	public static void main(String[] args) {
 		D09_userDefineExceptionEx memberManager = new D09_userDefineExceptionEx();
 		try {
-			memberManager.insert(new Member("홍길", "010-1223-2836", "서울시 마포구"));
+			memberManager.insert(new Member("홍길동", "010-1223-2836", "서울시 마포구"));
 		} catch (DuplicateKeyException e) {
 			System.out.println(e.toString());
 		}
