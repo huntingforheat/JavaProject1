@@ -7,12 +7,12 @@ public class E02_treeSetEx {
 		TreeSet<Integer> ts1 = new TreeSet<>();
 		
 		ts1.add(5);
-		ts1.add(2);
+		ts1.add(1);
 		ts1.add(8);
 		ts1.add(3);
 		ts1.add(7);
 		ts1.add(9);
-		ts1.add(1);
+		ts1.add(2);
 		ts1.add(4);
 		ts1.add(6);
 		for (Integer i : ts1) {
