@@ -7,7 +7,7 @@ public class E11_genericEx {
 		Person<Character> p1 = new Person<>('딸', 8); // <character> 생략가능
 		System.out.println(p1.getName());
 		
-		Person<String> p2 = new Person<String>("아빠", 45);
+		Person<String> p2 = new Person<>("아빠", 45);
 		System.out.println(p2.getName());
 		
 		System.out.println(p1.test(4.8)); 	// double

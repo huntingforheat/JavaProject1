@@ -27,7 +27,7 @@ public class Quiz_240321_AM2{
 	}
 	
 	public static int solution(int[] scoville, int K) {
-		int answer = 0;  //시도 횟수
+		int answer = 0;  //시도 횟수2
 		
 		// scoville 값을 저장 : 음식
 		PriorityQueue<Integer> que = new PriorityQueue<>();
@@ -41,7 +41,7 @@ public class Quiz_240321_AM2{
 			int result = que.poll() + (que.poll()*2);
 			que.add(result);
 			System.out.println(answer +"번째 Que의 내용 : "+que);
-			// 정해진 맵기 K값을 넘어서는 섞은 음식인 경우, 그 회사를 반환
+			// 정해진 맵기 K값을 넘어서는 섞은 음식인 경우, 그 회차를 반환
 			if(que.peek() >= K) return answer;
 			// K이상으로 만들 수 없는 경우 반환값은 -1
 			if(que.size() == 1) return -1;
