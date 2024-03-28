@@ -28,7 +28,7 @@ public class G12_mappingEx {
 			String[] strArr = data.split(",");
 			double[] dArr = new double[strArr.length];
 			for(int i = 0; i < dArr.length; i++) {
-				dArr[i] = Double.parseDouble(strArr[i].trim());
+				dArr[i] = Double.parseDouble(strArr[i].trim()); // String을 double로 변환
 			}
 			return Arrays.stream(dArr);
 		});
