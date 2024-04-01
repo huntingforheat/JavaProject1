@@ -66,4 +66,10 @@ public class PersonsVO { // vo 클래스는 데이터를 담는 역할
 	public void setCity(String city) {
 		this.city = city;
 	}
+
+	@Override
+	public String toString() {
+		return "PersonsVO [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", age=" + age
+				+ ", city=" + city + "]";
+	}
 }
