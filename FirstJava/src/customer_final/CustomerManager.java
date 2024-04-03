@@ -15,23 +15,27 @@ public class CustomerManager {
 	
 	public static void insertCustomerData() {
 		System.out.print("이름 > ");
-		String name = scan.nextLine();
+		String name = scan.next();
 		System.out.print("성별 > ");
-		String gender = scan.nextLine();
+		String gender = scan.next();
 		System.out.print("이메일 > ");
-		String email = scan.nextLine();
+		String email = scan.next();
 		System.out.print("생년월일 > ");
 		int birthYear = scan.nextInt();
 		
-		AddcusMessage addMsg = cus.addCusNo(name, gender, email, birthYear);
-		if(addMsg.type == AddcusMessage.ADD_SUCCESS)
-			cus.save();
-		else if(addMsg.type == AddcusMessage.NOT_EXISTING_GROUP) {
-			System.out.println(addMsg.msg);
-			return;
-		} else if(addMsg.type == AddcusMessage.EXISTING_NUMBER) {
-			
-		}
+		Customer c1 = new Customer(name, gender, email, birthYear);
+		
+		cusList.add(c1);
+		
+//		AddcusMessage addMsg = cus.addCusNo(name, gender, email, birthYear);
+//		if(addMsg.type == AddcusMessage.ADD_SUCCESS)
+//			cus.save();
+//		else if(addMsg.type == AddcusMessage.NOT_EXISTING_GROUP) {
+//			System.out.println(addMsg.msg);
+//			return;
+//		} else if(addMsg.type == AddcusMessage.EXISTING_NUMBER) {
+//			
+//		}
 	}
 	
 	public static void printAllCustomerData() {
@@ -57,8 +61,8 @@ public class CustomerManager {
 			System.out.println("출력, 수정 또는 삭제할 사람의 이름을 입력하세요.");
 			String name = scan.next();
 			for(int i = 0; i < count; i++) {
-				if(cusList[i].getName().equals(name)) {
-					return cusList[i];
+				if(cusList.get(i).getName().equals(name)) {
+					return cusList.get(i);
 				}
 			}
 			System.out.println("입력하신 이름을 가진 데이터가 없습니다.");
@@ -89,21 +93,30 @@ public class CustomerManager {
 			System.out.println(">>> ");
 			int menu = scan.nextInt();
 			
-			if(menu == 1) { // 회원 등록
+			switch(menu) { // 회원 등록
 //				System.out.println("고객 정보 입력을 시작합니다.");
+			case 1:
 				insertCustomerData();
-			} else if(menu == 2) { // 전체 회원 정보 보기
+				break;
+			case 2: // 전체 회원 정보 보기
 				printAllCustomerData();
-			} else if(menu == 3) { // 회원정보 검색 
+				break;
+			case 3: // 회원정보 검색 
 				printCustomerData(selectCustomerData());
-			} else if(menu == 4) { // 회원정보 수정
+				break;
+			case 4: // 회원정보 수정
 				System.out.println("데이터를 수정합니다.");
 				updateCustomerData(selectCustomerData());
-			} else if(menu == 5) { // 회원정보 삭제
-				
-			} else if(menu == 6) { // 종료
+				break;
+			case 5:
+				// 회원 정보 삭제 기능
+				break;
+			case 6: // 종료
 				scan.close();
 				System.out.println("프로그램을 종료합니다.");
+				return;
+			default :
+				System.out.println("올바른 메뉴 번호를 누르시오.");
 				break;
 			}
 		}
